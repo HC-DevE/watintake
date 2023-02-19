@@ -174,7 +174,7 @@ import '../models/hydration_entry.dart';
 import '../models/user.dart';
 
 class HydrationService {
-  final String _baseUrl = 'https://example.com/api'; // Replace with your API URL
+  final String _baseUrl = 'https://example.com/api'; // Replace with real API URL
   final User? user;
 
   HydrationService({this.user});

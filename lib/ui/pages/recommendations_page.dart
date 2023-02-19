@@ -52,7 +52,6 @@
 //   }
 // }
 
-
 //2nd method
 
 // import 'package:flutter/material.dart';
@@ -60,7 +59,6 @@
 // import '../../models/user.dart';
 // import '../../services/hydration_service.dart';
 // import '../widgets/hydration_chart.dart';
-
 
 // class RecommendationsPage extends StatefulWidget {
 //   final User user;
@@ -252,8 +250,7 @@
 //   }
 // }
 
-
-//4th one 
+//4th one
 import 'package:flutter/material.dart';
 import 'package:watintake/models/user.dart';
 import 'package:watintake/services/hydration_service.dart';
@@ -262,7 +259,7 @@ import 'package:watintake/ui/widgets/hydration_chart.dart';
 import '../../models/hydration_entry.dart';
 
 class RecommendationsPage extends StatefulWidget {
-  final User user;
+  final User? user;
 
   const RecommendationsPage({Key? key, required this.user}) : super(key: key);
 
@@ -327,11 +324,87 @@ class _RecommendationsPageState extends State<RecommendationsPage> {
                 return HydrationChart(hydrationEntries: hydrationEntries);
               },
             ),
+            ListView(
+              padding: const EdgeInsets.all(16),
+              // ignore: prefer_const_literals_to_create_immutables
+              children: [
+                const Text(
+                  'Tips for staying hydrated:',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                const Text(
+                  '1. Carry a reusable water bottle with you and drink from it throughout the day.',
+                  style: TextStyle(fontSize: 16),
+                ),
+                const SizedBox(height: 8),
+                const Text(
+                  '2. Flavor your water with fresh fruit or herbs to make it more enjoyable to drink.',
+                  style: TextStyle(fontSize: 16),
+                ),
+                const SizedBox(height: 8),
+                const Text(
+                  '3. Eat water-rich foods like watermelon, cucumbers, and tomatoes.',
+                  style: TextStyle(fontSize: 16),
+                ),
+                const SizedBox(height: 8),
+                const Text(
+                  '4. Set reminders to drink water throughout the day.',
+                  style: TextStyle(fontSize: 16),
+                ),
+                const SizedBox(height: 32),
+                const Text(
+                  'Foods that can help you stay hydrated:',
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+                const SizedBox(height: 16),
+                // ignore: prefer_const_constructors
+                const ListTile(
+                  leading: Text('fruits'),
+                  title: Text('Fruits'),
+                  // ignore: unnecessary_const
+                  subtitle: const Text(
+                      'Watermelon, strawberries, oranges, and grapefruits'),
+                ),
+                const SizedBox(height: 16),
+                const ListTile(
+                  leading: Text('vegetables'),
+                  title: Text('Vegetables'),
+                  subtitle: Text('Cucumbers, lettuce, celery, and tomatoes'),
+                ),
+              ],
+            ),
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // Existing hydration goal code
+                // Existing "Hydration Chart" text
+                // FutureBuilder to display hydration chart
+                FutureBuilder<List<HydrationEntry>>(
+                  future: _hydrationService.getHydrationEntries(),
+                  builder: (context, snapshot) {
+                    if (snapshot.connectionState == ConnectionState.waiting) {
+                      return const Center(
+                        child: CircularProgressIndicator(),
+                      );
+                    }
+                    final hydrationEntries =
+                        snapshot.data ?? <HydrationEntry>[];
+                    return HydrationChart(hydrationEntries: hydrationEntries);
+                  },
+                ),
+                // Existing tips and foods for staying hydrated code
+              ],
+            )
           ],
         ),
       ),
     );
   }
 }
-
-
