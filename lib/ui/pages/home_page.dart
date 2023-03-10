@@ -676,16 +676,16 @@ class _HomePageState extends State<HomePage>
                 },
                 icon: const Icon(Icons.local_drink),
               ),
-              IconButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const RecommendationsPage(user: null,)),
-                  );
-                },
-                icon: const Icon(Icons.stacked_bar_chart),
-              ),
+              // IconButton(
+              //   onPressed: () {
+              //     Navigator.push(
+              //       context,
+              //       MaterialPageRoute(
+              //           builder: (context) => const RecommendationsPage(user: null,)),
+              //     );
+              //   },
+              //   icon: const Icon(Icons.stacked_bar_chart),
+              // ),
               IconButton(
                 onPressed: () {
                   Navigator.push(

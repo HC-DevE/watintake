@@ -264,7 +264,6 @@ class RecommendationsPage extends StatefulWidget {
   const RecommendationsPage({Key? key, required this.user}) : super(key: key);
 
   @override
-  // ignore: library_private_types_in_public_api
   _RecommendationsPageState createState() => _RecommendationsPageState();
 }
 

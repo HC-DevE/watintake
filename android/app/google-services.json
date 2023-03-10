@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "81704932385",
+    "project_id": "waterapptest-da0bf",
+    "storage_bucket": "waterapptest-da0bf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:81704932385:android:06214e16f473dd9db3bf60",
+        "android_client_info": {
+          "package_name": "com.example.watintake"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "81704932385-m93e4jjhubunfk8bovstjn19hd122m4n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC80PbWXMtfPTf4KZM4mF-l5RWLbueJmOo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "81704932385-m93e4jjhubunfk8bovstjn19hd122m4n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
